@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 /*
-Version 0.9.1
+Version 0.9.2
 by Alexander Bigulov
 2018.08.12
 */
@@ -67,6 +67,7 @@ class NashMat implements ActionListener {
 	JTextField jtf17 = new JTextField (20);
 	JTextField jtf18 = new JTextField (20);
         //JLabels for your answers
+	JLabel jlabEndRes = new JLabel ("");
 	JLabel jlabRes1 = new JLabel ("");
 	JLabel jlabRes2 = new JLabel ("");
 	JLabel jlabRes3 = new JLabel ("");
@@ -169,7 +170,7 @@ NashMat(){
 	String x42s = Integer.toString(x42);
 	String a4s = Integer.toString(a4);
 	String b4s = Integer.toString(b4);
-	String ex4 = "|" + "x" + " + " + a4s + "| = " + b4s + " Ответ дать в виде множества A";
+	String ex4 = "|" + "x" + " + " + a4s + "| = " + b4s + " Ответ видa A = {x1; x2}";
 	if (x41s.equals(x42s)){
 	an4 = "A = {" + x41s + "}";
 	}else {
@@ -533,6 +534,7 @@ jfrm.add(jlab18);
 jfrm.add(jtf18);
 jfrm.add(jlabRes18);
 */
+jfrm.add(jlabEndRes);
 jfrm.setVisible(true);
 
 
@@ -540,6 +542,9 @@ jfrm.setVisible(true);
 //Setting answers
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
+	boolean bb = false;
+    int cr = 0;
+    String nt = "Правильно! =)";
 	String resStr1 = jtf1.getText();
 	String resStr2 = jtf2.getText();
 	String resStr3 = jtf3.getText();
@@ -558,9 +563,28 @@ public void actionPerformed(ActionEvent e) {
 	String resStr16 = jtf16.getText();
 	String resStr17 = jtf17.getText();
 	String resStr18 = jtf8.getText();
+	String iresStr1 = jlabRes1.getText();
+    String iresStr2 = jlabRes2.getText();
+    String iresStr3 = jlabRes3.getText();
+    String iresStr4 = jlabRes4.getText();
+    String iresStr5 = jlabRes5.getText();
+    String iresStr6 = jlabRes6.getText();
+    String iresStr7 = jlabRes7.getText();
+    String iresStr8 = jlabRes8.getText();
+    String iresStr9 = jlabRes9.getText();
+    String iresStr10 = jlabRes10.getText();
+    String iresStr11 = jlabRes11.getText();
+    String iresStr12 = jlabRes12.getText();
+    String iresStr13 = jlabRes13.getText();
+    String iresStr14 = jlabRes14.getText();
+    String iresStr15 = jlabRes15.getText();
+    String iresStr16 = jlabRes16.getText();
+    String iresStr17 = jlabRes17.getText();
+    String iresStr18 = jlabRes18.getText();
 	if(e.getActionCommand().equals("tf1")){
 	if (resStr1.equals (an1)){
 	jlabRes1.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes1.setText ("Неверно... :(");
@@ -569,6 +593,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf2")){
 	if (resStr2.equals (an2)){
 	jlabRes2.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes2.setText ("Неверно... :(");
@@ -577,6 +602,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf3")){
 	if (resStr3.equals (an3)){
 	jlabRes3.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes3.setText ("Неверно... :(");
@@ -585,6 +611,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf4")){
 	if (resStr4.equals (an4)){
 	jlabRes4.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes4.setText ("Неверно... :(");
@@ -593,6 +620,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf5")){
 	if (resStr5.equals (an5)){
 	jlabRes5.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes5.setText ("Неверно... :(");
@@ -601,6 +629,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf6")){
 	if (resStr6.equals (an6)){
 	jlabRes6.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes6.setText ("Неверно... :(");
@@ -609,6 +638,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf7")){
 	if (resStr7.equals (an7)){
 	jlabRes7.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes7.setText ("Неверно... :(");
@@ -617,6 +647,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf8")){
 	if (resStr8.equals (an8)){
 	jlabRes8.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes8.setText ("Неверно... :(");
@@ -625,6 +656,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf9")){
 	if (resStr9.equals (an9)){
 	jlabRes9.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes9.setText ("Неверно... :(");
@@ -633,6 +665,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf10")){
 	if (resStr10.equals (an10)){
 	jlabRes10.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes10.setText ("Неверно... :(");
@@ -641,6 +674,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf11")){
 	if (resStr11.equals (an11)){
 	jlabRes11.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes11.setText ("Неверно... :(");
@@ -649,6 +683,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf12")){
 	if (resStr12.equals (an12)){
 	jlabRes12.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes12.setText ("Неверно... :(");
@@ -657,6 +692,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf13")){
 	if (resStr13.equals (an13)){
 	jlabRes13.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes13.setText ("Неверно... :(");
@@ -665,6 +701,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf14")){
 	if (resStr14.equals (an14)){
 	jlabRes14.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes14.setText ("Неверно... :(");
@@ -673,6 +710,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf15")){
 	if (resStr15.equals (an15)){
 	jlabRes15.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes15.setText ("Неверно... :(");
@@ -681,6 +719,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf16")){
 	if (resStr16.equals (an16)){
 	jlabRes16.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes16.setText ("Неверно... :(");
@@ -689,6 +728,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf17")){
 	if (resStr17.equals (an17)){
 	jlabRes17.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes17.setText ("Неверно... :(");
@@ -697,6 +737,7 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf18")){
 	if (resStr18.equals (an18)){
 	jlabRes18.setText ("Правильно! =)");
+	cr += 1;
 	}
 	else {
 	jlabRes18.setText ("Неверно... :(");
@@ -719,7 +760,10 @@ public void actionPerformed(ActionEvent e) {
     }
     }
     }
-}//It is NOT simple construction but I could not do it better in 11 PM
+    jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
+    }
+
+//It is NOT simple construction but I could not do it better in 11 PM
 //Standard swing construction
 public static void main (String[] args){
 SwingUtilities.invokeLater( new Runnable (){public void run (){
@@ -729,5 +773,3 @@ SwingUtilities.invokeLater( new Runnable (){public void run (){
 
 
 }
-
-
