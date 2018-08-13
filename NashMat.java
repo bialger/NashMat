@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 /*
-Version 0.9.5
+Version 1.0
 by Alexander Bigulov
 2018.08.13
 */
@@ -86,24 +86,24 @@ class NashMat implements ActionListener {
 	JLabel jlabRes16 = new JLabel ("");
 	JLabel jlabRes17 = new JLabel ("");
 	JLabel jlabRes18 = new JLabel ("");
-	boolean bb1 = true;
-    boolean bb2 = true;
-    boolean bb3 = true;
-    boolean bb4 = true;
-    boolean bb5 = true;
-    boolean bb6 = true;
-    boolean bb7 = true;
-    boolean bb8 = true;
-    boolean bb9 = true;
-    boolean bb10 = true;
-    boolean bb11 = true;
-    boolean bb12 = true;
-    boolean bb13 = true;
-    boolean bb14 = true;
-    boolean bb15 = true;
-    boolean bb16 = true;
-    boolean bb17 = true;
-    boolean bb18 = true;
+	int bb1 = 0;
+    int bb2 = 0;
+    int bb3 = 0;
+    int bb4 = 0;
+    int bb5 = 0;
+    int bb6 = 0;
+    int bb7 = 0;
+    int bb8 = 0;
+    int bb9 = 0;
+    int bb10 = 0;
+    int bb11 = 0;
+    int bb12 = 0;
+    int bb13 = 0;
+    int bb14 = 0;
+    int bb15 = 0;
+    int bb16 = 0;
+    int bb17 = 0;
+    int bb18 = 0;
 //Standart construction for Swing
 NashMat(){
         //Exercises
@@ -309,7 +309,7 @@ NashMat(){
 	if (ch101 == 2) {
 	m10 = (int)(Math.random()*(-11) - 10);
 	}else{
-	m10 = (int)(Math.random()*9 + 2);
+        m10 = (int)(Math.random()*9 + 2);
 	}
 	}
 	double ch102 = (int)(Math.random()*3);
@@ -479,10 +479,25 @@ NashMat(){
 		}
 		}
 		}
+        
+        double a15 = (int)(Math.random()*41 - 20);
+	double ch15 = (int)(Math.random()*2);
+	double m15;
+	if (ch15 == 0){
+	m15 = 0;
+	}else {
+	m15 = (int)(Math.random()*2 + 2);
+	}
+	double an15d = Math.pow(a15,m15);
+	String a15s = Double.toString(a15);
+	String m15s = Double.toString(m15);
+	an15 = Double.toString(an15d);
+	ex15 = a15s + "^" + m15s + " = ? Ответ дать в десятичных дробях, 4 знака после запятой";
+        
 
 JFrame jfrm = new JFrame ("НАШМАТ");
-//Layout - table 16*3
-jfrm.setLayout (new GridLayout (16,3));
+//Layout - table 17*3
+jfrm.setLayout (new GridLayout (17,3));
 //Size -full screen
 jfrm.setSize (10000, 20000);
 jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -599,11 +614,11 @@ jfrm.add(jlabRes13);
 jfrm.add(jlab14);
 jfrm.add(jtf14);
 jfrm.add(jlabRes14);
-//I commented it because I didn`t do this exercises 
-/*
 jfrm.add(jlab15);
 jfrm.add(jtf15);
 jfrm.add(jlabRes15);
+//I commented it because I didn`t do this exercises 
+/*
 jfrm.add(jlab16);
 jfrm.add(jtf16);
 jfrm.add(jlabRes16);
@@ -664,342 +679,324 @@ public void actionPerformed(ActionEvent e) {
 	if(e.getActionCommand().equals("tf1")){
 	if (resStr1.equals (an1)){
 	jlabRes1.setText ("Правильно! =)");
-	bb1 = true;
-	if(bb1){
+	if(bb1 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb1 = false;
+		bb1 = 1;
 	}
 	}
 	else {
 	jlabRes1.setText ("Неверно... :(");
-	if (bb1 == false){
+	if (bb1 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb1 = true;
+		bb1 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf2")){
 	if (resStr2.equals (an2)){
 	jlabRes2.setText ("Правильно! =)");
-	bb2 = true;
-	if(bb2){
+	if(bb2 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb2 = false;
+		bb2 = 1;
 	}
 	}
 	else {
 	jlabRes2.setText ("Неверно... :(");
-	if (bb2 == false){
+	if (bb2 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb2 = true;
+		bb2 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf3")){
 	if (resStr3.equals (an3)){
 	jlabRes3.setText ("Правильно! =)");
-	bb3 = true;
-	if(bb3){
+	if(bb3 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb3 = false;
+		bb3 = 1;
 	}
 	}
 	else {
 	jlabRes3.setText ("Неверно... :(");
-	if (bb3 == false){
+	if (bb3 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb3 = true;
+		bb3 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf4")){
 	if (resStr4.equals (an4)){
 	jlabRes4.setText ("Правильно! =)");
-	bb4 = true;
-	if(bb4){
+	if(bb4 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb4 = false;
+		bb4 = 1;
 	}
 	}
 	else {
 	jlabRes4.setText ("Неверно... :(");
-	if (bb4 == false){
+	if (bb4 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb4 = true;
+		bb4 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf5")){
 	if (resStr5.equals (an5)){
 	jlabRes5.setText ("Правильно! =)");
-	bb5 = true;
-	if(bb5){
+	if(bb5 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb5 = false;
+		bb5 = 1;
 	}
 	}
 	else {
 	jlabRes5.setText ("Неверно... :(");
-	if (bb5 == false){
+	if (bb5 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb5 = true;
+		bb5 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf6")){
 	if (resStr6.equals (an6)){
 	jlabRes6.setText ("Правильно! =)");
-	bb6 = true;
-	if(bb6){
+	if(bb6 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb6 = false;
+		bb6 = 1;
 	}
 	}
 	else {
 	jlabRes6.setText ("Неверно... :(");
-	if (bb6 == false){
+	if (bb6 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb6 = true;
+		bb6 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf7")){
 	if (resStr7.equals (an7)){
 	jlabRes7.setText ("Правильно! =)");
-	bb7 = true;
-	if(bb7){
+	if(bb7 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb7 = false;
+		bb7 = 1;
 	}
 	}
 	else {
 	jlabRes7.setText ("Неверно... :(");
-	if (bb7 == false){
+	if (bb7 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb7 = true;
+		bb7 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf8")){
 	if (resStr8.equals (an8)){
 	jlabRes8.setText ("Правильно! =)");
-	bb8 = true;
-	if(bb8){
+	if(bb8 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb8 = false;
+		bb8 = 1;
 	}
 	}
 	else {
 	jlabRes8.setText ("Неверно... :(");
-	if (bb8 == false){
+	if (bb8 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb8 = true;
+		bb8 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf9")){
 	if (resStr9.equals (an9)){
 	jlabRes9.setText ("Правильно! =)");
-	bb9 = true;
-	if(bb9){
+	if(bb9 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb9 = false;
+		bb9 = 1;
 	}
 	}
 	else {
 	jlabRes9.setText ("Неверно... :(");
-	if (bb9 == false){
+	if (bb9 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb9 = true;
+		bb9 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf10")){
 	if (resStr10.equals (an10)){
 	jlabRes10.setText ("Правильно! =)");
-	bb10 = true;
-	if(bb10){
+	if(bb10 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb10 = false;
+		bb10 = 1;
 	}
 	}
 	else {
 	jlabRes10.setText ("Неверно... :(");
-	if (bb10 == false){
+	if (bb10 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb10 = true;
+		bb10 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf11")){
 	if (resStr11.equals (an11)){
 	jlabRes11.setText ("Правильно! =)");
-	bb11 = true;
-	if(bb11){
+	if(bb11 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb11 = false;
+		bb11 = 1;
 	}
 	}
 	else {
 	jlabRes11.setText ("Неверно... :(");
-	if (bb11 == false){
+	if (bb11 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb11 = true;
+		bb11 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf12")){
 	if (resStr12.equals (an12)){
 	jlabRes12.setText ("Правильно! =)");
-	bb12 = true;
-	if(bb12){
+	if(bb12 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb12 = false;
+		bb12 = 1;
 	}
 	}
 	else {
 	jlabRes12.setText ("Неверно... :(");
-	if (bb12 == false){
+	if (bb12 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb12 = true;
+		bb12 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf13")){
 	if (resStr13.equals (an13)){
 	jlabRes13.setText ("Правильно! =)");
-	bb13 = true;
-	if(bb13){
+	if(bb13 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb13 = false;
+		bb13 = 1;
 	}
 	}
 	else {
 	jlabRes13.setText ("Неверно... :(");
-	if (bb13 == false){
+	if (bb13 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb13 = true;
+		bb13 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf14")){
 	if (resStr14.equals (an14)){
 	jlabRes14.setText ("Правильно! =)");
-	bb14 = true;
-	if(bb14){
+	if(bb14 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb14 = false;
+		bb14 = 1;
 	}
 	}
 	else {
 	jlabRes14.setText ("Неверно... :(");
-	if (bb14 == false){
+	if (bb14 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb14 = true;
+		bb14 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf15")){
 	if (resStr15.equals (an15)){
 	jlabRes15.setText ("Правильно! =)");
-	bb15 = true;
-	if(bb15){
+	if(bb15 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb15 = false;
+		bb15 = 1;
 	}
 	}
 	else {
 	jlabRes15.setText ("Неверно... :(");
-	if (bb15 == false){
+	if (bb15 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb15 = true;
+		bb15 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf16")){
 	if (resStr16.equals (an16)){
 	jlabRes16.setText ("Правильно! =)");
-	bb16 = true;
-	if(bb16){
+	if(bb16 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb16 = false;
+		bb16 = 1;
 	}
 	}
 	else {
 	jlabRes16.setText ("Неверно... :(");
-	if (bb16 == false){
+	if (bb16 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb16 = true;
+		bb16 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf17")){
 	if (resStr17.equals (an17)){
 	jlabRes17.setText ("Правильно! =)");
-	bb17 = true;
-	if(bb17){
+	if(bb17 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb17 = false;
+		bb17 = 1;
 	}
 	}
 	else {
 	jlabRes17.setText ("Неверно... :(");
-	if (bb17 == false){
+	if (bb17 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb17 = true;
+		bb17 = 0;
 	}
 	}
 	}else{
 	if(e.getActionCommand().equals("tf18")){
 	if (resStr18.equals (an18)){
 	jlabRes18.setText ("Правильно! =)");
-	bb18 = true;
-	if(bb18){
+	if(bb18 == 0){
 		cr += 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb18 = false;
+		bb18 = 1;
 	}
 	}
 	else {
 	jlabRes18.setText ("Неверно... :(");
-	if (bb18 == false){
+	if (bb18 == 1){
 		cr -= 1;
 		jlabEndRes.setText("Ваш результат: "+ cr + " из 12");
-		bb18 = true;
+		bb18 = 0;
 	}
 	}
 	}
