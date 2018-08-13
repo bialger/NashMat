@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 /*
-Version 0.9.3
+Version 0.9.5
 by Alexander Bigulov
 2018.08.13
 */
@@ -86,6 +86,24 @@ class NashMat implements ActionListener {
 	JLabel jlabRes16 = new JLabel ("");
 	JLabel jlabRes17 = new JLabel ("");
 	JLabel jlabRes18 = new JLabel ("");
+	boolean bb1 = true;
+    boolean bb2 = true;
+    boolean bb3 = true;
+    boolean bb4 = true;
+    boolean bb5 = true;
+    boolean bb6 = true;
+    boolean bb7 = true;
+    boolean bb8 = true;
+    boolean bb9 = true;
+    boolean bb10 = true;
+    boolean bb11 = true;
+    boolean bb12 = true;
+    boolean bb13 = true;
+    boolean bb14 = true;
+    boolean bb15 = true;
+    boolean bb16 = true;
+    boolean bb17 = true;
+    boolean bb18 = true;
 //Standart construction for Swing
 NashMat(){
         //Exercises
@@ -113,8 +131,6 @@ NashMat(){
 	String b2s = Integer.toString(b2);
 	an2 = Integer.toString(c2);
 	ex2 = a2s + " / " + b2s + " = " + "?";
-	System.out.println(ex2);
-	System.out.println(an2);
 	int c21 =(int)(Math.random()*2001 - 1000);
 	int d21 =(int)(Math.random()*20001 - 10000);
 	int e21 =(int)(Math.random()*2001 - 1000);
@@ -196,17 +212,24 @@ NashMat(){
 	String a5s = Double.toString(a5*c5);
 	String b5s = Double.toString(d5*a5);
 	String c5s = Double.toString(a5*e5);
-	ex5 = "|" + c5s + "x" + " + " + a5s + "| = " + b5s + " Ответ дать в виде множества A";
-
-	if (a5*e5 == 0){
-	an5 = "A = {0}";
+	ex5 = "|" + c5s + "x" + " + " + a5s + "| = " + b5s + " Если ответа нет, ответ A = {NULL}";
+	if (a5 == 0){
+	an5 = "A = {NULL}";
 	}else {
+	if (e5 == 0){
+	an5 = "A = {NULL}";
+	}else {
+	if (d5*a5 < 0){
+	an5 = "A = {NULL}";
 	if (x51s.equals(x52s)){
 	an5 = "A = {" + x51s + "}";
 	}else {
 	an5 = "A = {"+x51s+"; "+x52s+"}";
 	}
-	}                                                                                                                                                                                                                                                                                                                                                                                                                              //fucking shit
+	}
+	}
+	}
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             //fucking shit
 	double a8 = (int)(Math.random()*4001 - 2000);
 	a8 /= 100;
 	double ch8 = (int)(Math.random()*2);
@@ -397,10 +420,69 @@ NashMat(){
 	String f12s = Double.toString(f12);
 	an12 = a12s + "^" + f12s;
 	ex12 = d12s + "^" + m12s + " / (" + e12s + "^" + n12s + ") = ? Ответ дать в виде a^b";
+	
+	double var13da = (int)(Math.random()*601 - 300);
+	var13da /= 100;
+	double var13db = (int)(Math.random()*601 - 300);
+	var13db /= 100;
+	double var13dc = (int)(Math.random()*601 - 300);
+	var13dc /= 100;
+	double an13d =var13da*(1+var13db)*(1+var13dc);
+	an13d *= 1000;
+	an13d = (int)(an1d);
+	an13d /= 1000;
+	an13 = Double.toString (an1d);
+	var13da *= 100;
+	var13db *= 100;
+	var13dc *= 100;
+	String var13sa = Double.toString (var13da);
+	var13sa += "%";
+	String var13sb = Double.toString (var13db);
+	var13sb += "%";
+	String var13sc = Double.toString (var13dc);
+	var13sc += "%";
+	ex13 = var13sa + " + " + var13sb + " + " + var13sc + " = ? Ответ дать в десятичных дробях";
+    
+	//|aex + (ac)| = ad
+		double a14=(int)(Math.random()*15 - 7);
+		double c14=(int)(Math.random()*15 - 7);
+		double d14=(int)(Math.random()*15 - 7);
+		double e14=(int)(Math.random()*15 - 7);
+		double x141 = ((-1)*c5 + d5)/e5;
+		double x142 = ((-1)*c5 - d5)/e5;
+		x141 *= 1000;
+		x141 = (int)(x141);
+		x141 /= 1000;
+		x142 *= 1000;
+		x142 = (int)(x142);
+		x142 /= 1000;
+		String x141s = Double.toString(x141);
+		String x142s = Double.toString(x142);
+		String a14s = Double.toString(a14*c14);
+		String b14s = Double.toString(d14*a14);
+		String c14s = Double.toString(a14*e14);
+		ex14 = "|" + c14s + "x" + " + " + a14s + "| = " + b14s + " Если ответа нет, ответ A = {NULL}";
+		if (a14 == 0){
+		an14 = "A = {NULL}";
+		}else {
+		if (e14 == 0){
+		an14 = "A = {NULL}";
+		}else {
+		if (d14*a14 < 0){
+		an14 = "A = {NULL}";
+		}else{
+		if (x141s.equals(x142s)){
+		an14 = "A = {" + x141s + "}";
+		}else {
+		an14 = "A = {"+x141s+"; "+x142s+"}";
+		}
+		}
+		}
+		}
 
 JFrame jfrm = new JFrame ("НАШМАТ");
-//Layout - table 14*3
-jfrm.setLayout (new GridLayout (14,3));
+//Layout - table 16*3
+jfrm.setLayout (new GridLayout (16,3));
 //Size -full screen
 jfrm.setSize (10000, 20000);
 jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -511,14 +593,14 @@ jfrm.add(jlabRes11);
 jfrm.add(jlab12);
 jfrm.add(jtf12);
 jfrm.add(jlabRes12);
-//I commented it because I didn`t do this exercises 
-/*
 jfrm.add(jlab13);
 jfrm.add(jtf13);
 jfrm.add(jlabRes13);
 jfrm.add(jlab14);
 jfrm.add(jtf14);
 jfrm.add(jlabRes14);
+//I commented it because I didn`t do this exercises 
+/*
 jfrm.add(jlab15);
 jfrm.add(jtf15);
 jfrm.add(jlabRes15);
@@ -579,24 +661,6 @@ public void actionPerformed(ActionEvent e) {
     String iresStr16 = jlabRes16.getText();
     String iresStr17 = jlabRes17.getText();
     String iresStr18 = jlabRes18.getText();
-    boolean bb1 = true;
-    boolean bb2 = true;
-    boolean bb3 = true;
-    boolean bb4 = true;
-    boolean bb5 = true;
-    boolean bb6 = true;
-    boolean bb7 = true;
-    boolean bb8 = true;
-    boolean bb9 = true;
-    boolean bb10 = true;
-    boolean bb11 = true;
-    boolean bb12 = true;
-    boolean bb13 = true;
-    boolean bb14 = true;
-    boolean bb15 = true;
-    boolean bb16 = true;
-    boolean bb17 = true;
-    boolean bb18 = true;
 	if(e.getActionCommand().equals("tf1")){
 	if (resStr1.equals (an1)){
 	jlabRes1.setText ("Правильно! =)");
