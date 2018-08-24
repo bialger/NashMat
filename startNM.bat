@@ -1,2 +1,1 @@
-#! /bin/bash
-java -cp ~/clav/ RuEng
+java -cp ~/nashm/ NashMat
